@@ -16,7 +16,8 @@ namespace Accipiter.Models.Users
 
         public string Status { get; set; }
 
-
+        public List<int> PostsIds { get; set; }
+        public List<int> CommentsIds { get; set; }
         public string About { get; set; }
 
         public string GetFullName()

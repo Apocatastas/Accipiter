@@ -10,6 +10,6 @@ namespace Accipiter.Models.Posts
         public User Author { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public List<string> Tags { get; set; }
+        public List<int> TagsIds { get; set; }
     }
 }
