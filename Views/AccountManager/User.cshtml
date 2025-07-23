@@ -82,6 +82,80 @@
                     }
                 </div>
 
+                <div class="postsbox">
+                    @if (Model.Posts.Count != 0)
+                    {
+
+                        @foreach (var post in @Model.Posts)
+                        {
+                            <div class="datadiv">
+                                <div class="mrgn center-align">
+                                    @post.GetTitle()
+                                </div>
+                                <div class="mrgn center-align">
+                                    @post.GetSnippet()
+                                </div>
+                                <div class="mrgn center-align">
+                                    <form asp-controller="PostsManager" asp-action="ReadPost" asp-route-id="@post.Id" method="post">
+                                        <button type="submit" class="btn btn-sm btn-primary min-width-but">
+                                            Читать
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="mrgn center-align">
+                                    <form asp-controller="PostsManager" asp-action="DeletePost" asp-route-id="@post.Id" method="post">
+                                        <button type="submit" class="btn btn-sm btn-primary min-width-but">
+                                            Удалить
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <label> У вас пока нет публикаций.</label>
+                        </div>
+                    }
+                </div>
+                <div class="commentsbox">
+                    @if (Model.Comments.Count != 0)
+                    {
+
+                        @foreach (var comment in @Model.Comments)
+                        {
+                            <div class="datadiv">
+                                <div class="mrgn center-align">
+                                    @comment.GetSnippet()
+                                </div>
+                                <div class="mrgn center-align">
+                                    <form asp-controller="PostsManager" asp-action="ReadPost" asp-route-id="@comment.Id" method="post">
+                                        <button type="submit" class="btn btn-sm btn-primary min-width-but">
+                                            Читать
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="mrgn center-align">
+                                    <form asp-controller="PostsManager" asp-action="DeletePost" asp-route-id="@comment.Id" method="post">
+                                        <button type="submit" class="btn btn-sm btn-primary min-width-but">
+                                            Удалить
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <label> Вы пока не писали комментарии.</label>
+                        </div>
+                    }
+                </div>
+
             </div>
             </div>
 
