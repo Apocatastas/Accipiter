@@ -30,6 +30,9 @@
                 {
                     <a asp-area="" asp-controller="AccountManager" asp-action="MyPage"><img src="https://apocatastas.github.io/thebestdeveloperever/1.svg" /></a>
                     <div class="righ-align">
+                        <form method="post" asp-controller="PostManager" asp-action="PostContent">
+                            <input class="enter_submit" type="submit" value="Новый пост" />
+                        </form>
                         <form method="post" asp-controller="AccountManager" asp-action="Logout">
                             <input class="enter_submit" type="submit" value="Выход" />
                         </form>
